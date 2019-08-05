@@ -1,1 +1,4 @@
-<p>auth works!</p>
+
+
+<button mdbBtn type="button" color="info" outline="true" (click)="onSingIn()" mdbWavesEffect *ngIf="!statuAuth">Connexion</button>
+<button mdbBtn type="button" color="warning" outline="true" (click)="onSingOut()" *ngIf="statuAuth" mdbWavesEffect>Deconnexion</button>

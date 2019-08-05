@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthComponent implements OnInit {
 
-  constructor() { }
+  statuAuth: boolean;
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
+    this.statuAuth = this.authService.isAuth;
+  }
+
+  onSingIn() {
+    this.authService.singIn().then(
+       () => {
+         this.statuAuth = this.authService.isAuth;
+         this.router.navigate(['appareils']);
+       }
+    );
+  }
+
+  onSingOut() {
+    this.authService.singOut();
+    this.statuAuth = this.authService.isAuth;
+    console.log("deconnxion");
   }
 
 }
