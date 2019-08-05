@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { FormsModule } from '@angular/forms';
 import { AppareilComponent } from './appareil/appareil.component';
+import { AppareilService} from './services/appareil.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,9 @@ import { AppareilComponent } from './appareil/appareil.component';
     MDBBootstrapModule.forRoot(),
     FormsModule,
   ],
-  providers: [],
+  providers: [
+    AppareilService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

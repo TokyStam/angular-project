@@ -1,6 +1,9 @@
 
-    <li class="list-group-item">
-        <div style="height: 20px; width: 20px; background: red;" *ngIf="appareilStatus === 'off'"></div>
-        <h4 [ngStyle] = "{color: getColor();}">Appareil: {{ appareilName }} --- Statu: {{ (getStatus()) }} </h4>
+    <li class="list-group-item alert alert-primary" role="alert">      
+             <h4 [ngStyle]="{color: getColor()}">Appareil: {{ appareilName }} --- Statu: {{ getStatus() }} </h4>
+
+             <button type="button" mdbBtn color="success" size="sm" (click)="onSwitchOne()" mdbWavesEffect >On all</button>
+            <button type="button" mdbBtn color="danger" size="sm"  (click)="onSwitchOff()" mdbWavesEffect>Off all</button>
     </li>
- 
+   
+           
