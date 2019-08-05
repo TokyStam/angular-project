@@ -1,3 +1,6 @@
+
+
+
 <!--Navbar-->
 <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark unique-color" [containerInside]="false">
 
@@ -66,21 +69,16 @@
 
 </mdb-navbar>
 <!--/.Navbar-->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h2>Mes appareils</h2>
+    <ul class="list-group">
+      <app-appareil appareilName="ordinateur"></app-appareil>
+      <app-appareil appareilName="micro onde"></app-appareil>
+      <app-appareil appareilName="machine a lave"></app-appareil>
+    </ul>
 
-<button type="button" mdbBtn color="primary" mdbWavesEffect>Primary</button>
-<button type="button" mdbBtn color="secondary" mdbWavesEffect>Secondary</button>
-<button type="button" mdbBtn color="success" mdbWavesEffect>Success</button>
-<button type="button" mdbBtn color="danger" mdbWavesEffect>Danger</button>
-<button type="button" mdbBtn color="warning" mdbWavesEffect>Warning</button>
-<button type="button" mdbBtn color="info" mdbWavesEffect>Info</button>
-<button type="button" mdbBtn color="light" mdbWavesEffect>Light</button>
-<button type="button" mdbBtn color="dark" mdbWavesEffect>Dark</button>
-<button type="button" mdbBtn color="link">Link</button>
-
-<ul class="list-group">
-  <li class="list-group-item">Cras justo odio</li>
-  <li class="list-group-item">Dapibus ac facilisis in</li>
-  <li class="list-group-item">Morbi leo risus</li>
-  <li class="list-group-item">Porta ac consectetur ac</li>
-  <li class="list-group-item">Vestibulum at eros</li>
-</ul>
+    <button type="button" mdbBtn color="success" mdbWavesEffect [disabled]="!isAuth">Alumer tout</button>
+  </div>
+</div>
