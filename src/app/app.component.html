@@ -74,9 +74,9 @@
     <div class="col-lg-12">
       <h2>Mes appareils</h2>
     <ul class="list-group">
-      <app-appareil appareilName="ordinateur"></app-appareil>
-      <app-appareil appareilName="micro onde"></app-appareil>
-      <app-appareil appareilName="machine a lave"></app-appareil>
+      <app-appareil [appareilName]="appareilName1"></app-appareil>
+      <app-appareil [appareilName]="appareilName2"></app-appareil>
+      <app-appareil [appareilName]="appareilName3"></app-appareil>
     </ul>
 
     <button type="button" mdbBtn color="success" mdbWavesEffect [disabled]="!isAuth">Alumer tout</button>
