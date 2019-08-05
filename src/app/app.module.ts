@@ -7,19 +7,32 @@ import { AppComponent } from './app.component';
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { FormsModule } from '@angular/forms';
-import { AppareilComponent } from './appareil/appareil.component';
 import { AppareilService} from './services/appareil.service';
+import { AppreilViewComponent } from './appreil-view/appreil-view.component';
+import { RouterModule, Routes } from '@angular/router';
+import { AppareilComponent } from './appareil/appareil.component';
+import { AuthComponent } from './auth/auth.component';
+
+
+const appRoutes: Routes = [
+  { path: 'appareils', component: AppreilViewComponent },
+  {path: 'auth', component: AuthComponent},
+  { path: '', component: AppreilViewComponent},
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    AppareilComponent
+    AppareilComponent,
+    AppreilViewComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MDBBootstrapModule.forRoot(),
     FormsModule,
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [
     AppareilService

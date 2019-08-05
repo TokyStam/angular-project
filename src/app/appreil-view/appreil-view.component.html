@@ -1,0 +1,14 @@
+<div class="col-ms-12">
+        <h2>Mes appareils</h2>
+      <ul class="list-group">
+        
+        <app-appareil *ngFor="let appareil of appareils, let i=index"
+                    [indexOfAppareil]="i"
+                    [appareilName]="appareil.name"
+                    [appareilStatus]="appareil.status"
+         ></app-appareil>
+      </ul>
+  
+      <button type="button" mdbBtn color="success" (click)="allumerTout()" mdbWavesEffect >On all</button>
+      <button type="button" mdbBtn color="danger"  (click)="eteindreTout()" mdbWavesEffect>Off all</button>
+</div>
