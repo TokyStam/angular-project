@@ -15,11 +15,12 @@ import { AuthComponent } from './auth/auth.component';
 import { AuthService } from './services/auth.service';
 import { SingleAppareilComponent } from './single-appareil/single-appareil.component';
 import { ErrorComponent } from './error/error.component';
+import { AuthGuard } from './services/auth-guard.service';
 
 
 const appRoutes: Routes = [
-  { path: 'appareils', component: AppreilViewComponent },
-  { path: 'appareils/:id', component: SingleAppareilComponent },
+  { path: 'appareils', canActivate: [AuthGuard], component: AppreilViewComponent },
+  { path: 'appareils/:id', canActivate: [AuthGuard], component: SingleAppareilComponent },
   {path: 'auth', component: AuthComponent},
   { path: '', component: AppreilViewComponent},
   { path: 'not-found', component: ErrorComponent},
@@ -44,7 +45,8 @@ const appRoutes: Routes = [
   ],
   providers: [
     AppareilService,
-    AuthService
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
