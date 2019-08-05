@@ -6,8 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  appareilName1 = "ordinateur";
-  appareilName2 = "Machiine a coudre";
-  appareilName3 = "robo";
- isAuth = false;
+ appareils = [
+   {
+     name: 'oridinateur',
+     status: 'on'
+   },
+   {
+    name: 'telephone',
+    status: 'off'
+  },
+  {
+    name: 'oridinateur',
+    status: 'on'
+  }
+ ];
 }

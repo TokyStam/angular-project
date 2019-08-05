@@ -8,14 +8,14 @@ import { Component, Input, OnInit } from '@angular/core';
 export class AppareilComponent implements OnInit {
 
   @Input() appareilName: string;
-  appareilStatu ="Eteind";
+  @Input() appareilStatus: string;
   constructor() { }
 
   ngOnInit() {
   }
 
   getStatus(){
-    return this.appareilStatu;
+    return this.appareilStatus;
   }
 
 }
