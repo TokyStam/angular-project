@@ -1,6 +1,6 @@
 
     <li class="list-group-item">
         <div style="height: 20px; width: 20px; background: red;" *ngIf="appareilStatus === 'off'"></div>
-        <h4>Appareil: {{ appareilName }} --- Statu: {{ (getStatus()) }} </h4>
+        <h4 [ngStyle] = "{color: getColor();}">Appareil: {{ appareilName }} --- Statu: {{ (getStatus()) }} </h4>
     </li>
  
