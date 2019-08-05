@@ -1,7 +1,7 @@
 
     <li class="list-group-item alert alert-primary" role="alert">      
              <h4 [ngStyle]="{color: getColor()}">Appareil: {{ appareilName }} --- Statu: {{ getStatus() }} </h4>
-
+             <a [routerLink]="[id]">Detail</a>
              <button type="button" mdbBtn color="success" size="sm" (click)="onSwitchOne()" mdbWavesEffect >On</button>
             <button type="button" mdbBtn color="danger" size="sm"  (click)="onSwitchOff()" mdbWavesEffect>Off</button>
     </li>
